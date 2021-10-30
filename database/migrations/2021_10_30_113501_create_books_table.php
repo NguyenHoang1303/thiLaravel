@@ -15,10 +15,10 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->integer('authorid');
+            $table->integer('authorid')->default(0);
             $table->string('title');
             $table->string('ISBN');
-            $table->smallInteger('pub_year');
+            $table->smallInteger('pub_year')->default(0);
             $table->tinyInteger('available')->nullable();
             $table->timestamps();
         });
